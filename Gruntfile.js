@@ -1,8 +1,8 @@
 /* jshint node:true */
-module.exports = function( grunt ) {
+module.exports = function (grunt) {
 	'use strict';
 
-	var sass = require( 'node-sass' );
+	var sass = require('node-sass');
 
 	grunt.initConfig({
 
@@ -10,7 +10,7 @@ module.exports = function( grunt ) {
 		postcss: {
 			options: {
 				processors: [
-					require( 'autoprefixer' )({
+					require('autoprefixer')({
 						browsers: [
 							'> 0.1%',
 							'ie 8',
@@ -140,7 +140,7 @@ module.exports = function( grunt ) {
 					implementation: sass,
 					require: 'susy',
 					sourceMap: false,
-					includePaths: require( 'bourbon' ).includePaths
+					includePaths: require('bourbon').includePaths
 				},
 				files: [{
 					'style.css': 'style.scss',
@@ -218,7 +218,13 @@ module.exports = function( grunt ) {
 				tasks: [
 					'sass',
 					'css'
-				]
+				],
+				options: {
+					livereload: {
+						host: 'localhost',
+						// port: 8888,
+					},
+				},
 			},
 			js: {
 				files: [
@@ -247,7 +253,13 @@ module.exports = function( grunt ) {
 					'babel',
 					'jshint',
 					'uglify'
-				]
+				],
+				options: {
+					livereload: {
+						host: 'localhost',
+						// port: 8888,
+					},
+				},
 			}
 		},
 
@@ -273,7 +285,7 @@ module.exports = function( grunt ) {
 
 		// Check textdomain errors.
 		checktextdomain: {
-			options:{
+			options: {
 				text_domain: 'storefront',
 				keywords: [
 					'__:1,2d',
@@ -293,7 +305,7 @@ module.exports = function( grunt ) {
 				]
 			},
 			files: {
-				src:  [
+				src: [
 					'**/*.php', // Include all files
 					'!node_modules/**' // Exclude node_modules/
 				],
@@ -346,54 +358,54 @@ module.exports = function( grunt ) {
 							processors: [
 								{
 									expr: /content/im,
-									action: function( prop, value ) {
-										if ( value === '"\\f190"' ) { // arrow-circle-o-left
+									action: function (prop, value) {
+										if (value === '"\\f190"') { // arrow-circle-o-left
 											value = '"\\f18e"';
-										} else if ( value === '"\\f18e"' ) { // arrow-circle-o-right
+										} else if (value === '"\\f18e"') { // arrow-circle-o-right
 											value = '"\\f190"';
-										} else if ( value === '"\\f191"' ) { // caret-square-o-left
+										} else if (value === '"\\f191"') { // caret-square-o-left
 											value = '"\\f152"';
-										} else if ( value === '"\\f152"' ) { // caret-square-o-right
+										} else if (value === '"\\f152"') { // caret-square-o-right
 											value = '"\\f191"';
-										} else if ( value === '"\\f100"' ) { // angle-double-left
+										} else if (value === '"\\f100"') { // angle-double-left
 											value = '"\\f101"';
-										} else if ( value === '"\\f101"' ) { // angle-double-right
+										} else if (value === '"\\f101"') { // angle-double-right
 											value = '"\\f100"';
-										} else if ( value === '"\\f104"' ) { // angle-left
+										} else if (value === '"\\f104"') { // angle-left
 											value = '"\\f105"';
-										} else if ( value === '"\\f105"' ) { // angle-right
+										} else if (value === '"\\f105"') { // angle-right
 											value = '"\\f104"';
-										} else if ( value === '"\\f0a8"' ) { // arrow-circle-left
+										} else if (value === '"\\f0a8"') { // arrow-circle-left
 											value = '"\\f0a9"';
-										} else if ( value === '"\\f0a9"' ) { // arrow-circle-right
+										} else if (value === '"\\f0a9"') { // arrow-circle-right
 											value = '"\\f0a8"';
-										} else if ( value === '"\\f060"' ) { // arrow-left
+										} else if (value === '"\\f060"') { // arrow-left
 											value = '"\\f061"';
-										} else if ( value === '"\\f061"' ) { // arrow-right
+										} else if (value === '"\\f061"') { // arrow-right
 											value = '"\\f060"';
-										} else if ( value === '"\\f0d9"' ) { // caret-left
+										} else if (value === '"\\f0d9"') { // caret-left
 											value = '"\\f0da"';
-										} else if ( value === '"\\f0da"' ) { // caret-right
+										} else if (value === '"\\f0da"') { // caret-right
 											value = '"\\f0d9"';
-										} else if ( value === '"\\f137"' ) { // chevron-circle-left
+										} else if (value === '"\\f137"') { // chevron-circle-left
 											value = '"\\f138"';
-										} else if ( value === '"\\f138"' ) { // chevron-circle-right
+										} else if (value === '"\\f138"') { // chevron-circle-right
 											value = '"\\f137"';
-										} else if ( value === '"\\f053"' ) { // chevron-left
+										} else if (value === '"\\f053"') { // chevron-left
 											value = '"\\f054"';
-										} else if ( value === '"\\f054"' ) { // chevron-right
+										} else if (value === '"\\f054"') { // chevron-right
 											value = '"\\f053"';
-										} else if ( value === '"\\f0a5"' ) { // hand-o-left
+										} else if (value === '"\\f0a5"') { // hand-o-left
 											value = '"\\f0a4"';
-										} else if ( value === '"\\f0a4"' ) { // hand-o-right
+										} else if (value === '"\\f0a4"') { // hand-o-right
 											value = '"\\f0a5"';
-										} else if ( value === '"\\f177"' ) { // long-arrow-left
+										} else if (value === '"\\f177"') { // long-arrow-left
 											value = '"\\f178"';
-										} else if ( value === '"\\f178"' ) { // long-arrow-right
+										} else if (value === '"\\f178"') { // long-arrow-right
 											value = '"\\f177"';
-										} else if ( value === '"\\f191"' ) { // toggle-left
+										} else if (value === '"\\f191"') { // toggle-left
 											value = '"\\f152"';
-										} else if ( value === '"\\f152"' ) { // toggle-right
+										} else if (value === '"\\f152"') { // toggle-right
 											value = '"\\f191"';
 										}
 										return { prop: prop, value: value };
@@ -460,30 +472,30 @@ module.exports = function( grunt ) {
 	});
 
 	// Load NPM tasks to be used here
-	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-rtlcss' );
-	grunt.loadNpmTasks( 'grunt-postcss' );
-	grunt.loadNpmTasks( 'grunt-contrib-compress' );
-	grunt.loadNpmTasks( 'grunt-stylelint' );
-	grunt.loadNpmTasks( 'grunt-babel' );
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-wp-i18n');
+	grunt.loadNpmTasks('grunt-checktextdomain');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-rtlcss');
+	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-stylelint');
+	grunt.loadNpmTasks('grunt-babel');
 
 
 	// Register tasks
-	grunt.registerTask( 'default', [
+	grunt.registerTask('default', [
 		'css',
 		'babel',
 		'jshint',
 		'uglify'
 	]);
 
-	grunt.registerTask( 'css', [
+	grunt.registerTask('css', [
 		'stylelint',
 		'sass',
 		'postcss',
@@ -491,12 +503,12 @@ module.exports = function( grunt ) {
 		'rtlcss'
 	]);
 
-	grunt.registerTask( 'dev', [
+	grunt.registerTask('dev', [
 		'default',
 		'makepot'
 	]);
 
-	grunt.registerTask( 'deploy', [
+	grunt.registerTask('deploy', [
 		'dev',
 		'copy',
 		'compress'

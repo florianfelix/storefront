@@ -221,10 +221,10 @@ module.exports = function (grunt) {
 				],
 				options: {
 					livereload: {
-						host: 'localhost',
+						host: 'localhost'
 						// port: 8888,
-					},
-				},
+					}
+				}
 			},
 			js: {
 				files: [
@@ -256,10 +256,10 @@ module.exports = function (grunt) {
 				],
 				options: {
 					livereload: {
-						host: 'localhost',
+						host: 'localhost'
 						// port: 8888,
-					},
-				},
+					}
+				}
 			}
 		},
 
